@@ -1,32 +1,32 @@
-//import java.util.*;
-//public class SubarraySumEqualsK560 {
-//     static class Solution {
-//
-//         //logic:
-//         // for current index how many such subarrays may exist which has sum==k
-//         // for that matter we need hashmap
-//         // can be done in O(N^3 traversal+sum) and O(N^2 using traversal+prefix sum)
+import java.util.*;
+public class SubarraySumEqualsK560 {
+     static class Solution {
+
+         //logic:
+         // for current index how many such subarrays may exist which has sum==k
+         // for that matter we need hashmap
+         // can be done in O(N^3 traversal+sum) and O(N^2 using traversal+prefix sum)
 //          x+k==sum
 //          x=sum-k
 //          if x exist that means x ke aage wale index se curr index tak sum is == k
-            // hence we check that sum-k in hashmap
-//         //DONE!!!!!!!
-//        public int subarraySum(int[] nums, int k) {
-//            HashMap<Integer,Integer>hm=new HashMap<>();
-//            int ans=0;
-//            hm.put(0,1);
-//            int sum=0;
-//            for(int i=0;i<nums.length;i++){
-//                sum+=nums[i];
-//                if(hm.containsKey(sum-k)){
-//                    ans+=hm.get(sum-k);
-//                }
-//                hm.put(sum,hm.getOrDefault(sum,0)+1);
-//            }
-//            return ans;
-//        }
-//    }
-//}
+//             hence we check that sum-k in hashmap
+         //DONE!!!!!!!
+        public int subarraySum(int[] nums, int k) {
+            HashMap<Integer,Integer>hm=new HashMap<>();
+            int ans=0;
+            hm.put(0,1);
+            int sum=0;
+            for(int i=0;i<nums.length;i++){
+                sum+=nums[i];
+                if(hm.containsKey(sum-k)){
+                    ans+=hm.get(sum-k);
+                }
+                hm.put(sum,hm.getOrDefault(sum,0)+1);
+            }
+            return ans;
+        }
+    }
+}
 
 //import java.util.*;
 //class Codechef {
